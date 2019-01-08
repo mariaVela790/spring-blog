@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class RollController {
-    @GetMapping("/roll-dice/n")
+    @GetMapping("/roll-dice/{n}")
     public String rollDice(@PathVariable int n, Model model){
         int roll = (int)(Math.random() * ((5) + 1));
-        String message = "Incorrect, roll again";
+        String message = String.format("You rolled a %d and guessed %d. ", roll, n);
 
 
         if(roll == n){
-            message = "You guessed correct";
+            message += "You guessed correct";
+        } else {
+            message += "Your guess didn\'t match, guess again.";
         }
 
         model.addAttribute("message", message);
-        model.addAttribute("guess", n);
-        model.addAttribute("roll", roll);
         return "roll-dice";
     }
 
@@ -27,4 +27,6 @@ public class RollController {
     public String rollDice(){
         return "roll-dice";
     }
+
+
 }
