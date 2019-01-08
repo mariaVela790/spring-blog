@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ad</title>
+    <meta th:replace="partials :: bootstrap-meta"/>
+    <link th:replace="partials :: bootstrap"/>
+    <link th:replace="partials :: stylesheet"/>
+</head>
+<body>
+<div class="container-fluid">
+    <nav th:replace="partials :: navbar"/>
+    <header th:replace="partials :: header"/>
+
+    <p th:text="${post.title}"/>
+    <p th:text="${post.body}"/>
+
+    <footer th:replace="partials :: footer"/>
+    <div th:replace="partials :: bootstrap-scripts"/>
+</div>
+
+</body>
+</html>
