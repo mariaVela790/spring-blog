@@ -17,25 +17,26 @@ public class PostService {
         createPosts();
     }
 
-    private void createPosts(){
-        for(long i = 0; i < 10; i++){
-            posts.add(new Post("title" + i, "body" + i, i));
-        }
-    }
 
     public List<Post> all(){
         return posts;
     }
 
     public Post onePost(long id){
-        for(int i = 0; i < posts.size(); i++){
-            if(posts.get(i).getId() == id){
-                return posts.get(i);
-            }
-        }
-        return null;
+        return posts.get((int)id - 1);
     }
 
+    public Post createPost(Post post){
+        post.setId(posts.size() + 1);
+        posts.add(post);
+        return post;
+    }
+
+    private void createPosts(){
+        for(long i = 0; i < 10; i++){
+            createPost(new Post("title" + i, "body" + i));
+        }
+    }
 
 
 }
