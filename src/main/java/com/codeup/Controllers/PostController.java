@@ -1,7 +1,6 @@
 package com.codeup.Controllers;
 
-import com.codeup.PostService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.codeup.Services.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
