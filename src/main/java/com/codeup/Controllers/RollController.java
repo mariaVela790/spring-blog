@@ -16,7 +16,7 @@ public class RollController {
         if(roll == n){
             message += "You guessed correct";
         } else {
-            message += "Your guess didn\'t match, guess again.";
+            message += "Your guess didn\'t match, roll again";
         }
 
         model.addAttribute("message", message);
