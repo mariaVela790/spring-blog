@@ -48,12 +48,11 @@ public class PostController {
         return "/posts/edit";
     }
 
-    @PostMapping("/posts/edit")
+    @PostMapping("/posts/{id}/edit")
     public String saveEdit(@ModelAttribute Post post){
         System.out.println(post.getTitle());
 //        code to save edit to id
-        return "redirect:/posts";
+        return "redirect:/posts" + post.getId();
     }
-
 
 }

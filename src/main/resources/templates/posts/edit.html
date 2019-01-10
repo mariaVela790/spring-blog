@@ -5,7 +5,7 @@
 
 <nav th:replace="partials :: navbar"></nav>
 <header th:replace="partials :: header"></header>
-<form th:replace="partials :: edit-create-form('/posts/edit')"/>
+<form th:replace="partials :: edit-create-form('/posts/' + ${id} + '/edit')"/>
 
 <footer th:replace="partials :: footer"></footer>
 
