@@ -4,6 +4,7 @@ import com.codeup.Models.Post;
 import com.codeup.Services.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
@@ -48,7 +49,8 @@ public class PostController {
     }
 
     @PostMapping("/posts/edit")
-    public String saveEdit(Post post, Model model){
+    public String saveEdit(@ModelAttribute Post post){
+        System.out.println(post.getTitle());
 //        code to save edit to id
         return "redirect:/posts";
     }
