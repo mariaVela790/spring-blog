@@ -47,7 +47,7 @@ public class PostController {
         return "/posts/edit";
     }
 
-    @PostMapping("/posts/{id}/edit")
+    @PostMapping("/posts/edit")
     public String saveEdit(Post post, Model model){
 //        code to save edit to id
         return "redirect:/posts";
