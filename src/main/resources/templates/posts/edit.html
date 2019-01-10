@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials :: head('Edit Post')"/>
+<body>
+
+<nav th:replace="partials :: navbar"></nav>
+<header th:replace="partials :: header"></header>
+<form th:replace="partials :: edit-create-form('/posts/' + *{id} + '/edit')"/>
+
+<footer th:replace="partials :: footer"></footer>
+
+</body>
+</html>

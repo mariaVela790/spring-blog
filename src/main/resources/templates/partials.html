@@ -54,6 +54,18 @@
     </div>
 </div>
 
+<form th:fragment="edit-create-form(action)" action="#" th:action="${action}" method="post" th:object="${post}">
+    Title:
+    <input type="text" th:field="*{title}"/>
+    <br/>
+    Description:
+    <input type="text" th:field="*{body}"/>
+    <br/>
+    <input type="submit"/>
+</form>
+
+
+
 <div th:fragment="footer" class="fancy-footer row">
     <div class="col-12">
         <ul>
