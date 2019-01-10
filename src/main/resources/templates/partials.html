@@ -55,11 +55,11 @@
 </div>
 
 <form th:fragment="edit-create-form(action)" action="#" th:action="${action}" method="post" th:object="${post}">
-    Title:
+    <div>Title:</div>
     <input type="text" th:field="*{title}"/>
     <br/>
-    Description:
-    <input type="text" th:field="*{body}"/>
+    <div>Description:</div>
+    <textarea type="text" th:field="*{body}"></textarea>
     <br/>
     <input type="submit"/>
 </form>
