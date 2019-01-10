@@ -17,12 +17,11 @@ public class PostService {
         createPosts();
     }
 
-
     public List<Post> all(){
         return posts;
     }
 
-    public Post onePost(long id){
+    public Post findPost(long id){
         return posts.get((int)id - 1);
     }
 
@@ -37,6 +36,8 @@ public class PostService {
             createPost(new Post("title" + i, "body" + i));
         }
     }
+
+
 
 
 }
