@@ -3,21 +3,18 @@
     /*background: red;*/
 }
 
+/*.fancy-footer{*/
+    /*padding: 2.5rem 0;*/
+    /*color: #999;*/
+    /*text-align: center;*/
+    /*background-color: #f9f9f9;*/
+    /*border-top: .05rem solid #e5e5e5;*/
+/*}*/
+
 .fancy-footer{
-    padding: 2.5rem 0;
-    color: #999;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-top: .05rem solid #e5e5e5;
-}
+    position: fixed;
+    left: 1em;
+    bottom: 0;
+    width: 100%;
 
-footer, header{
-    display: block;
-}
-
-html{
-    height: 100%;
-}
-body{
-    min-height: 100%;
 }
