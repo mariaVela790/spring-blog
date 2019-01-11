@@ -36,6 +36,10 @@ public class PostService {
         return postDao.exists(id);
     }
 
+    public Post editPost(Post post){
+        return createPost(post);
+    }
+
 //    private void createPosts(){
 //        for(long i = 0; i < 10; i++){
 //            createPost(new Post("title" + i, "body" + i));

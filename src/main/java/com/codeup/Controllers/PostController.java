@@ -52,7 +52,8 @@ public class PostController {
     public String saveEdit(@ModelAttribute Post post){
         System.out.println(post.getTitle());
 //        code to save edit to id
-        return "redirect:/posts" + post.getId();
+        postService.editPost(post);
+        return "redirect:/posts/" + post.getId();
     }
 
     @GetMapping("/posts/{id}/delete")
