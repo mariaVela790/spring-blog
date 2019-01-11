@@ -55,4 +55,11 @@ public class PostController {
         return "redirect:/posts" + post.getId();
     }
 
+    @GetMapping("/posts/{id}/delete")
+    public String deletePost(@PathVariable long id, Model model){
+        boolean deleteSuccess = postService.deletePost(id);
+        model.addAttribute("deleteSuccess", deleteSuccess);
+        return "redirect:/posts";
+    }
+
 }
