@@ -32,7 +32,7 @@ public class PostService {
 
     public boolean deletePost(long id){
         postDao.delete(id);
-        return postDao.exists(id);
+        return !postDao.exists(id);
     }
 
     public Post editPost(Post post){
