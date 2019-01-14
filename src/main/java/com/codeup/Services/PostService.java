@@ -15,11 +15,10 @@ public class PostService {
     @Autowired
     public PostService(PostRepository postDao){
         this.postDao = postDao;
-//        createPosts();
     }
 
-    public Iterable<Post> all(){
-        return postDao.findAll();
+    public List<Post> all(){
+        return (List<Post>) postDao.findAll();
     }
 
     public Post findPost(long id){
@@ -39,14 +38,5 @@ public class PostService {
     public Post editPost(Post post){
         return createPost(post);
     }
-
-//    private void createPosts(){
-//        for(long i = 0; i < 10; i++){
-//            createPost(new Post("title" + i, "body" + i));
-//        }
-//    }
-
-
-
 
 }
