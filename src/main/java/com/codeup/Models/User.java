@@ -11,14 +11,33 @@ public class User {
     @GeneratedValue
     private long id;
 
+    @Column(nullable = false, length =300, unique = true)
     private String username;
 
+    @Column(nullable = false, length = 300, unique = true)
     private String email;
 
+    @Column(nullable = false, length = 300)
     private String password;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Post> posts;
+
+    public User(){}
+
+    public User(User copy){
+        id = copy.id;
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+    }
+
+//    public User(long id, String username, String email, String password){
+//        this.id = id;
+//        this.username = username;
+//        this.email = email;
+//        this.password = password;
+//    }
 
     public long getId() {
         return id;
