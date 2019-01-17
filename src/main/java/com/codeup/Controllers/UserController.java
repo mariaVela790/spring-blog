@@ -34,24 +34,24 @@ public class UserController {
         return "redirect:/login";
     }
 
-    @GetMapping("/edit-profile")
-    public String showEditForm(Model model){
-        model.addAttribute("user", (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
-        return "users/edit";
-    }
-
-    @PostMapping("/edit-profile")
-    public String saveEdit(@ModelAttribute User user){
-        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        //confirm both users are the same
-        System.out.println(user.getId());
-        if(currentUser.getId() == user.getId()){
-            System.out.println(user.getId());
-            user.setPassword(currentUser.getPassword());
-            user.setId(currentUser.getId());
-        }
-        users.save(user);
-        return "users/edit";
-    }
+//    @GetMapping("/edit-profile")
+//    public String showEditForm(Model model){
+//        model.addAttribute("user", (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+//        return "users/edit";
+//    }
+//
+//    @PostMapping("/edit-profile")
+//    public String saveEdit(@ModelAttribute User user){
+//        User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        //confirm both users are the same
+//        System.out.println(user.getId());
+//        if(currentUser.getId() == user.getId()){
+//            System.out.println(user.getId());
+//            user.setPassword(currentUser.getPassword());
+//            user.setId(currentUser.getId());
+//        }
+//        users.save(user);
+//        return "users/edit";
+//    }
 
 }
