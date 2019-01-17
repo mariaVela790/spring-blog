@@ -1,7 +1,10 @@
 package com.codeup.Controllers;
 
 import com.codeup.Models.Post;
+import com.codeup.Models.User;
+import com.codeup.Repositories.UserRepository;
 import com.codeup.Services.PostService;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,9 +15,13 @@ import org.springframework.ui.Model;
 @Controller
 public class PostController {
     private final PostService postService;
+    private final UserRepository userRepo;
 
-    public PostController(PostService postService){
+    public PostController(PostService postService, UserRepository userRepo){
+
         this.postService = postService;
+        this.userRepo = userRepo;
+
     }
 
     @GetMapping("/posts")
@@ -37,6 +44,7 @@ public class PostController {
 
     @PostMapping("/posts/create")
     public String save(Post post){
+        post.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         postService.createPost(post);
         return "redirect:/posts";
     }

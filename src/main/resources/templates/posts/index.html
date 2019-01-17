@@ -8,7 +8,7 @@
 
     <div th:text="${deleteSuccess}"></div>
     <div th:each="post:${posts}">
-        <p th:text="${post.title}"/>
+        <a th:href="'/posts/' + ${post.id}"><p th:text="${post.title}"/></a>
         <p th:text="${post.body}"/>
     </div>
 

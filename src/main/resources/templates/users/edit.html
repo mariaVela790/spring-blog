@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="partials :: head('Edit Profile')"/>
+<body>
+<div th:replace="partials :: navbar"></div>
+<div th:replace="partials :: header"/>
+<div sec:authorize="isAuthenticated()">
+    <form th:action="@{/edit-profile}" method="post" th:object="${user}">
+        <label for="username">Username</label>
+        <input id="username" type="text" th:field="*{username}"/>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" th:field="*{email}"/>
+
+        <input type="submit" value="Save Changes"/>
+    </form>
+</div>
+
+<div th:replace="partials :: footer"/>
+<div th:replace="partials :: scripts"/>
+
+
+</body>
+</html>
